@@ -165,3 +165,7 @@ If you find issues with the code please raise them in our
 This repository has a code of conduct which is detailed in
 [the code of conduct](./CODE_OF_CONDUCT.md).  When raising an issue in this
 repository you agree to abide by the code of conduct.
+
+## Code Quality
+
+Minor commit to trigger sca see Sonarcloud.io
