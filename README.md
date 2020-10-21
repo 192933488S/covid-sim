@@ -169,3 +169,4 @@ repository you agree to abide by the code of conduct.
 ## Code Quality
 
 Minor commit to trigger sca see Sonarcloud.io
+Trigger 1
