@@ -6,7 +6,6 @@ compiler:
 
 
 before_script:  
-    - cd covid-sim
     - mkdir build
     - cd build
     - cmake ..
