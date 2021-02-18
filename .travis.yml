@@ -2,10 +2,12 @@ language: cpp
 # install: make get-deps
 compiler:  
     - gcc
+    env: PYTHON3_EXECUTABLE=/usr/bin/python3
     - clang
+    env: PYTHON3_EXECUTABLE=/usr/bin/python3
     
 install:
-    - sudo apt-get install python3
+#    - sudo apt-get install python3 # exists
 
 before_script:  
     - mkdir build
@@ -27,3 +29,6 @@ script:
   # And finally run the SonarCloud analysis - read the "sonar-project.properties"
   # file to see the specific configuration
   - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
+  
+# cmake --build . --target all
+# ctest -V
