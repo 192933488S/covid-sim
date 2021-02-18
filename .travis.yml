@@ -10,7 +10,7 @@ matrix:
     
 install:
 #    - sudo apt-get install python3 # exists
-     - sudo apt-get install python-dev python3-dev
+#     - sudo apt-get install python-dev python3-dev
 
 before_script:  
     - which -a python3
@@ -26,6 +26,11 @@ addons:
     organization: "192933488s"
 #    token:
 #     secure: "cf35ed245aba9165c9e5103c6ea1dc59d1da02bb" # encrypted value of your token
+  apt:
+    packages:
+      - cmake-data
+      - cmake
+
 
 script:
   # Wraps the compilation with the Build Wrapper to generate configuration (used
