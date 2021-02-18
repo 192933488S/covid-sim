@@ -6,7 +6,7 @@ matrix:
     include:
     - os: linux
       compiler: gcc
-#      env: PYTHON3_EXECUTABLE=/usr/local/bin/python3
+#      env: PYTHON3_EXECUTABLE=/usr/bin/python3
     
 install:
 #    - sudo apt-get install python3 # exists
@@ -16,7 +16,7 @@ before_script:
     - which -a python3
     - mkdir build
     - cd build
-    - cmake ..    
+#    - cmake ..    
 #    - cmake .. -DPYTHON_EXECUTABLE=/usr/bin/python3
 
 # script: make  
