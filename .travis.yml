@@ -6,7 +6,7 @@ matrix:
     include:
     - os: linux
       compiler: gcc
-      env: PYTHON3_EXECUTABLE=/usr/bin/python3
+      env: PYTHON3_EXECUTABLE=/usr/local/bin/python3
     
 install:
 #    - sudo apt-get install python3 # exists
