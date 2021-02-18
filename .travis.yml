@@ -12,6 +12,7 @@ install:
 #    - sudo apt-get install python3 # exists
 
 before_script:  
+    - which -a python3
     - mkdir build
     - cd build
     - cmake ..
