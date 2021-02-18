@@ -15,7 +15,7 @@ before_script:
     - which -a python3
     - mkdir build
     - cd build
-    - cmake ..
+    - cmake .. -DPYTHON_EXECUTABLE=/usr/bin/python3
 
 # script: make  
 
