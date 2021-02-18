@@ -168,4 +168,4 @@ repository you agree to abide by the code of conduct.
 
 ## Code Quality
 
-Commit trigger
+Commit trigger 2
