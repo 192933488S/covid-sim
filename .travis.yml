@@ -21,8 +21,8 @@ before_script:
 addons:
   sonarcloud:
     organization: "192933488s"
-    token:
-      secure: "cf35ed245aba9165c9e5103c6ea1dc59d1da02bb" # encrypted value of your token
+#    token:
+#     secure: "cf35ed245aba9165c9e5103c6ea1dc59d1da02bb" # encrypted value of your token
 
 script:
   # Wraps the compilation with the Build Wrapper to generate configuration (used
