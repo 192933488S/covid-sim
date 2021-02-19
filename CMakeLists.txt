@@ -57,10 +57,10 @@ add_subdirectory(unit_tests)
 add_subdirectory(tests)
 
 # First we can indicate the documentation build as an option and set it to OFF by default
-option(BUILD_DOC "Build documentation" OFF)
+#option(BUILD_DOC "Build documentation" OFF)
 
 # Check if Doxygen is installed
-find_package(Doxygen)
+#find_package(Doxygen)
 if(DOXYGEN_FOUND)
   # Set input and output files
   set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile.in)
