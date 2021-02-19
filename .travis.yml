@@ -26,17 +26,17 @@ addons:
       - cmake
       - doxygen
       - doxygen-doc
-      - graphviz
+#      - graphviz
 
 script:
   - mkdir build
   - cd build
-  - cmake .. -DPYTHON_EXECUTABLE=/usr/bin/python3
+  - cmake
+#  - cmake .. -DPYTHON_EXECUTABLE=/usr/bin/python3
   - cd ..
-#    - cmake .. -DPYTHON_EXECUTABLE=/usr/bin/python3
   # Wraps the compilation with the Build Wrapper to generate configuration (used
   # later by the SonarScanner) into the "bw-output" folder
-  - build-wrapper-linux-x86-64 --out-dir bw-output cmake -A x64 --build build/ all
+  - build-wrapper-linux-x86-64 --out-dir bw-output cmake -A x64 --build build/
   # And finally run the SonarCloud analysis - read the "sonar-project.properties"
   # file to see the specific configuration
   #- sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
