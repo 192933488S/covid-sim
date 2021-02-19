@@ -24,7 +24,11 @@ addons:
     packages:
       - cmake-data
       - cmake
-
+      - doxygen
+      - doxygen-doc
+      - doxygen-latex
+      - doxygen-gui
+      - graphviz
 
 script:
   - mkdir build
