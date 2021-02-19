@@ -13,13 +13,7 @@ install:
 #     - sudo apt-get install python-dev python3-dev
 
 before_script:  
-    - which -a python3
-    - mkdir build
-    - cd build
-#    - cmake ..    
-#    - cmake .. -DPYTHON_EXECUTABLE=/usr/bin/python3
-
-# script: make  
+#    - which -a python3
 
 addons:
   sonarcloud:
@@ -33,12 +27,17 @@ addons:
 
 
 script:
+    - mkdir build
+    - cd build
+    - cmake ..    
+    - cd ..
+#    - cmake .. -DPYTHON_EXECUTABLE=/usr/bin/python3
+
   # Wraps the compilation with the Build Wrapper to generate configuration (used
   # later by the SonarScanner) into the "bw-output" folder
-  - build-wrapper-linux-x86-64 --out-dir bw-output cmake ..
+  - build-wrapper-linux-x86-64 --out-dir bw-output  cmake --build build/ --target all
   # And finally run the SonarCloud analysis - read the "sonar-project.properties"
   # file to see the specific configuration
   - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
   
-  - cmake --build . --target all
   - ctest -V
