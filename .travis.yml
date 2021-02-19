@@ -23,7 +23,7 @@ addons:
   apt:
     packages:
       - cmake-data
-      - cmake
+      - cmake ..
       - doxygen
       - doxygen-doc
 #      - graphviz
