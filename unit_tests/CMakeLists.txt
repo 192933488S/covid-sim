@@ -1,4 +1,4 @@
-cmake_policy(SET CMP0079 NEW)
+# cmake_policy(SET CMP0079 NEW)
 
 include(FetchContent)
 
