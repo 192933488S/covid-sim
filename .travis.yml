@@ -23,7 +23,7 @@ addons:
   apt:
     packages:
       - cmake-data
-      - cmake ..
+      - cmake
       - doxygen
       - doxygen-doc
 #      - graphviz
@@ -31,7 +31,7 @@ addons:
 script:
   - mkdir build
   - cd build
-  - cmake
+  - cmake ..
 #  - cmake .. -DPYTHON_EXECUTABLE=/usr/bin/python3
   - cd ..
   # Wraps the compilation with the Build Wrapper to generate configuration (used
