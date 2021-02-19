@@ -36,13 +36,13 @@ if(USE_OPENMP)
 endif()
 
 # Python3 needed for testing
-if (CMAKE_VERSION VERSION_LESS 3.12)
-  set(Python_ADDITIONAL_VERSIONS 3 3.9 3.8 3.7 3.6)
-  find_package(PythonInterp REQUIRED)
-  set(Python3_EXECUTABLE "${PYTHON_EXECUTABLE}")
-else()
-  find_package(Python3 REQUIRED)
-endif()
+#if (CMAKE_VERSION VERSION_LESS 3.12)
+#  set(Python_ADDITIONAL_VERSIONS 3 3.9 3.8 3.7 3.6)
+#  find_package(PythonInterp REQUIRED)
+#  set(Python3_EXECUTABLE "${PYTHON_EXECUTABLE}")
+#else()
+#  find_package(Python3 REQUIRED)
+#endif()
 
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD 14)
@@ -80,7 +80,7 @@ if(DOXYGEN_FOUND)
   message("Doxygen build started")
 
   # Don't build by default
-  add_custom_target(doxygen
+  add_custom_target(doxygen)
     COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     COMMENT "Generating documentation with Doxygen"
