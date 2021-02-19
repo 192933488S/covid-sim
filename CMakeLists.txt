@@ -7,9 +7,9 @@ cmake_minimum_required (VERSION 3.11)
 project("CovidSim")
 
 # Work around some policy behaviours
-if(POLICY CMP0076)
-  cmake_policy(SET CMP0076 NEW)
-endif()
+#if(POLICY CMP0076)
+#  cmake_policy(SET CMP0076 NEW)
+#endif()
 
 # Set a default build type if none was specified
 set(default_build_type "RelWithDebInfo")
