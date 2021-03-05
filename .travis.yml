@@ -1,25 +1,21 @@
+# covid-sim travis-ci yml
 dist: bionic
 language: cpp
-# install: make get-deps
 
 matrix:
     include:
     - os: linux
       compiler: gcc
-#      env: PYTHON3_EXECUTABLE=/usr/bin/python3
+
     
 install:
-#    - sudo apt-get install python3 # exists
-#     - sudo apt-get install python-dev python3-dev
 
 before_script:  
-#    - which -a python3
 
 addons:
   sonarcloud:
     organization: "192933488s"
-#    token:
-#     secure: "cf35ed245aba9165c9e5103c6ea1dc59d1da02bb" # encrypted value of your token
+
   apt:
     packages:
       - cmake-data
@@ -32,21 +28,11 @@ script:
   - mkdir build
   - cd build
   - cmake ..
-#  - cmake .. -DPYTHON_EXECUTABLE=/usr/bin/python3
   - cd ..
-  # Wraps the compilation with the Build Wrapper to generate configuration (used
-  # later by the SonarScanner) into the "bw-output" folder
   - build-wrapper-linux-x86-64 --out-dir bw-output cmake --build build/
-  # And finally run the SonarCloud analysis - read the "sonar-project.properties"
-  # file to see the specific configuration
-  #- sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
   - sonar-scanner -Dsonar.cfamily.cache.enabled=true -Dsonar.cfamily.cache.path=${TRAVIS_HOME}/.cfamily
-
-#  - ctest -V
 
 cache:
   directories:
     - $HOME/.sonar/cache
-    # This contains the CFamily cache. According to https://docs.travis-ci.com/user/caching/#pull-request-builds-and-caches,
-    # for a PR, it will use the cache of the target branch if the branch of the PR does not already have its cache.
     - $HOME/.cfamily
